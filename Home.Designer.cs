@@ -43,10 +43,18 @@
             button5 = new Button();
             button6 = new Button();
             button7 = new Button();
+            panel2 = new Panel();
+            pointagePanel = new Panel();
+            listView1 = new ListView();
+            affNom = new Label();
+            searchMatr = new Button();
+            label2 = new Label();
+            matricul_input = new TextBox();
             header.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoBox).BeginInit();
             flowLayoutPanel1.SuspendLayout();
+            pointagePanel.SuspendLayout();
             SuspendLayout();
             // 
             // header
@@ -58,7 +66,7 @@
             header.Location = new Point(0, 0);
             header.Name = "header";
             header.Padding = new Padding(20, 5, 5, 5);
-            header.Size = new Size(1600, 55);
+            header.Size = new Size(1400, 55);
             header.TabIndex = 0;
             // 
             // label1
@@ -77,7 +85,7 @@
             panel1.Controls.Add(minimizebtn);
             panel1.Controls.Add(closebtn);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1381, 5);
+            panel1.Location = new Point(1181, 5);
             panel1.Name = "panel1";
             panel1.Size = new Size(214, 45);
             panel1.TabIndex = 1;
@@ -264,12 +272,94 @@
             button7.TextAlign = ContentAlignment.MiddleLeft;
             button7.UseVisualStyleBackColor = false;
             // 
+            // panel2
+            // 
+            panel2.AutoSize = true;
+            panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel2.Location = new Point(260, 58);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(0, 0);
+            panel2.TabIndex = 2;
+            // 
+            // pointagePanel
+            // 
+            pointagePanel.Controls.Add(listView1);
+            pointagePanel.Controls.Add(affNom);
+            pointagePanel.Controls.Add(searchMatr);
+            pointagePanel.Controls.Add(label2);
+            pointagePanel.Controls.Add(matricul_input);
+            pointagePanel.Location = new Point(263, 61);
+            pointagePanel.Name = "pointagePanel";
+            pointagePanel.Size = new Size(1132, 689);
+            pointagePanel.TabIndex = 3;
+            // 
+            // listView1
+            // 
+            listView1.BackColor = SystemColors.ScrollBar;
+            listView1.BorderStyle = BorderStyle.None;
+            listView1.Location = new Point(24, 80);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(1100, 597);
+            listView1.TabIndex = 4;
+            listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // affNom
+            // 
+            affNom.AutoSize = true;
+            affNom.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            affNom.ForeColor = SystemColors.ButtonHighlight;
+            affNom.Location = new Point(407, 32);
+            affNom.Name = "affNom";
+            affNom.Size = new Size(100, 21);
+            affNom.TabIndex = 3;
+            affNom.Text = "Afficher nom";
+            affNom.Click += affNom_Click;
+            // 
+            // searchMatr
+            // 
+            searchMatr.Cursor = Cursors.Hand;
+            searchMatr.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 64, 64);
+            searchMatr.FlatAppearance.MouseOverBackColor = Color.FromArgb(16, 33, 30);
+            searchMatr.FlatStyle = FlatStyle.Flat;
+            searchMatr.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            searchMatr.ForeColor = Color.DarkCyan;
+            searchMatr.Location = new Point(284, 26);
+            searchMatr.Name = "searchMatr";
+            searchMatr.Size = new Size(108, 33);
+            searchMatr.TabIndex = 2;
+            searchMatr.Text = "Chercher";
+            searchMatr.UseVisualStyleBackColor = true;
+            searchMatr.Click += searchMatr_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Emoji", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(36, 27);
+            label2.Name = "label2";
+            label2.Size = new Size(101, 26);
+            label2.TabIndex = 1;
+            label2.Text = "Matricule :";
+            // 
+            // matricul_input
+            // 
+            matricul_input.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            matricul_input.Location = new Point(143, 25);
+            matricul_input.MaxLength = 6;
+            matricul_input.Name = "matricul_input";
+            matricul_input.Size = new Size(135, 33);
+            matricul_input.TabIndex = 0;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.FromArgb(22, 22, 22);
-            ClientSize = new Size(1600, 750);
+            ClientSize = new Size(1400, 750);
+            Controls.Add(pointagePanel);
+            Controls.Add(panel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(header);
             FormBorderStyle = FormBorderStyle.None;
@@ -281,7 +371,10 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logoBox).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
+            pointagePanel.ResumeLayout(false);
+            pointagePanel.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -301,5 +394,12 @@
         private Button closebtn;
         private Button minimizebtn;
         private Label label1;
+        private Panel panel2;
+        private Panel pointagePanel;
+        private TextBox matricul_input;
+        private Label label2;
+        private Button searchMatr;
+        private Label affNom;
+        private ListView listView1;
     }
 }

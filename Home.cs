@@ -15,7 +15,6 @@ namespace JIRAMA
         public Home()
         {
             InitializeComponent();
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
         private void closebtn_Click(object sender, EventArgs e)
@@ -28,51 +27,27 @@ namespace JIRAMA
             WindowState = FormWindowState.Minimized;
         }
 
-        int grid = 16;
-        int caption = 40;
-        protected override void WndProc(ref Message m)
+
+        private void searchMatr_Click(object sender, EventArgs e)
         {
-            base.WndProc(ref m);
-            if (m.Msg == 0x84)
+            string matricule = matricul_input.Text;
+            
+            if (matricul_input.Text.Length < 6 )
             {
-                Point p = new Point(m.LParam.ToInt32());
-                p = this.PointToClient(p);
-                if (p.Y <= caption)
-                {
-                    m.Result = (IntPtr)2;
-                    return;
-                }
-                if (p.X >= this.ClientSize.Width - grid && p.Y >= this.ClientSize.Height - grid)
-                {
-                    m.Result = (IntPtr)17;
-                    return;
-                }
-                if (p.X <= grid && p.Y>=this.ClientSize.Height - grid)
-                {
-                    m.Result = (IntPtr)16;
-                    return;
-                }
-                if (p.X <= grid)
-                {
-                    m.Result = (IntPtr)10;
-                    return;
-                }
-                if (p.X >= ClientSize.Width - grid)
-                {
-                    m.Result = (IntPtr)11;
-                    return;
-                }
-                if (p.X <= grid)
-                {
-                    m.Result = (IntPtr)12;
-                    return;
-                }
-                if (p.Y >= ClientSize.Height - grid)
-                {
-                    m.Result = (IntPtr)15;
-                }
+                
+                affNom.Text = "Le numero matricule doit être composé de 6 chiffres!!!";
+                affNom.ForeColor = Color.Red;
             }
-            base.WndProc(ref m);
+            else
+            {
+                affNom.Text = matricule;
+                affNom.ForeColor = Color.Green;
+            }
+        }
+
+        private void affNom_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(matricul_input.Text);
         }
     }
 }

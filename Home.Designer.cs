@@ -14,6 +14,7 @@
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
+
             {
                 components.Dispose();
             }
@@ -36,8 +37,8 @@
             logoBox = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             listeEmpBtn = new Button();
-            button1 = new Button();
-            button2 = new Button();
+            pointagebtn = new Button();
+            heuresupBtn = new Button();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
@@ -72,22 +73,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Calibri", 18F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(255, 128, 0);
             label1.Location = new Point(59, 17);
             label1.Name = "label1";
-            label1.Size = new Size(87, 30);
+            label1.Size = new Size(89, 29);
             label1.TabIndex = 2;
             label1.Text = "JIRAMA";
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel1.Controls.Add(minimizebtn);
             panel1.Controls.Add(closebtn);
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1181, 5);
+            panel1.Location = new Point(1182, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(214, 45);
+            panel1.Size = new Size(213, 45);
             panel1.TabIndex = 1;
             // 
             // minimizebtn
@@ -133,16 +134,16 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Add(listeEmpBtn);
-            flowLayoutPanel1.Controls.Add(button1);
-            flowLayoutPanel1.Controls.Add(button2);
+            flowLayoutPanel1.Controls.Add(pointagebtn);
+            flowLayoutPanel1.Controls.Add(heuresupBtn);
             flowLayoutPanel1.Controls.Add(button3);
             flowLayoutPanel1.Controls.Add(button4);
             flowLayoutPanel1.Controls.Add(button5);
             flowLayoutPanel1.Controls.Add(button6);
             flowLayoutPanel1.Controls.Add(button7);
-            flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 55);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(5, 20, 0, 0);
@@ -154,7 +155,7 @@
             listeEmpBtn.BackColor = Color.DimGray;
             listeEmpBtn.FlatAppearance.BorderSize = 0;
             listeEmpBtn.FlatStyle = FlatStyle.Flat;
-            listeEmpBtn.Font = new Font("Arial Unicode MS", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            listeEmpBtn.Font = new Font("Calibri", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             listeEmpBtn.ForeColor = SystemColors.ButtonHighlight;
             listeEmpBtn.Image = Properties.Resources.logo_jirama;
             listeEmpBtn.Location = new Point(8, 23);
@@ -165,42 +166,44 @@
             listeEmpBtn.TextAlign = ContentAlignment.MiddleLeft;
             listeEmpBtn.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // pointagebtn
             // 
-            button1.BackColor = Color.FromArgb(64, 64, 64);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Unicode MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(8, 78);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 49);
-            button1.TabIndex = 1;
-            button1.Text = "Pointage";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
+            pointagebtn.BackColor = Color.FromArgb(64, 64, 64);
+            pointagebtn.FlatAppearance.BorderSize = 0;
+            pointagebtn.FlatStyle = FlatStyle.Flat;
+            pointagebtn.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pointagebtn.ForeColor = SystemColors.ButtonHighlight;
+            pointagebtn.Location = new Point(8, 78);
+            pointagebtn.Name = "pointagebtn";
+            pointagebtn.Size = new Size(200, 49);
+            pointagebtn.TabIndex = 1;
+            pointagebtn.Text = "Pointage";
+            pointagebtn.TextAlign = ContentAlignment.MiddleLeft;
+            pointagebtn.UseVisualStyleBackColor = false;
+            pointagebtn.Click += pointagebtn_Click;
             // 
-            // button2
+            // heuresupBtn
             // 
-            button2.BackColor = Color.FromArgb(64, 64, 64);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial Unicode MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(8, 133);
-            button2.Name = "button2";
-            button2.Size = new Size(200, 49);
-            button2.TabIndex = 2;
-            button2.Text = "Heure Suplémentaire";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = false;
+            heuresupBtn.BackColor = Color.FromArgb(64, 64, 64);
+            heuresupBtn.FlatAppearance.BorderSize = 0;
+            heuresupBtn.FlatStyle = FlatStyle.Flat;
+            heuresupBtn.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            heuresupBtn.ForeColor = SystemColors.ButtonHighlight;
+            heuresupBtn.Location = new Point(8, 133);
+            heuresupBtn.Name = "heuresupBtn";
+            heuresupBtn.Size = new Size(200, 49);
+            heuresupBtn.TabIndex = 2;
+            heuresupBtn.Text = "Heure Suplémentaire";
+            heuresupBtn.TextAlign = ContentAlignment.MiddleLeft;
+            heuresupBtn.UseVisualStyleBackColor = false;
+            heuresupBtn.Click += heuresup_click;
             // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(64, 64, 64);
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Arial Unicode MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = SystemColors.ButtonHighlight;
             button3.Location = new Point(8, 188);
             button3.Name = "button3";
@@ -215,7 +218,7 @@
             button4.BackColor = Color.DimGray;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Arial Unicode MS", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Font = new Font("Calibri", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             button4.ForeColor = SystemColors.ButtonHighlight;
             button4.Image = Properties.Resources.logo_jirama;
             button4.Location = new Point(8, 243);
@@ -231,7 +234,7 @@
             button5.BackColor = Color.FromArgb(64, 64, 64);
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Arial Unicode MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button5.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button5.ForeColor = SystemColors.ButtonHighlight;
             button5.Location = new Point(8, 298);
             button5.Name = "button5";
@@ -246,7 +249,7 @@
             button6.BackColor = Color.FromArgb(64, 64, 64);
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Arial Unicode MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button6.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button6.ForeColor = SystemColors.ButtonHighlight;
             button6.Location = new Point(8, 353);
             button6.Name = "button6";
@@ -261,7 +264,7 @@
             button7.BackColor = Color.DimGray;
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Arial Unicode MS", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.Font = new Font("Calibri", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = SystemColors.ButtonHighlight;
             button7.Image = Properties.Resources.logo_jirama;
             button7.Location = new Point(8, 408);
@@ -297,7 +300,7 @@
             // 
             listView1.BackColor = SystemColors.ScrollBar;
             listView1.BorderStyle = BorderStyle.None;
-            listView1.Location = new Point(24, 80);
+            listView1.Location = new Point(0, 72);
             listView1.Name = "listView1";
             listView1.Size = new Size(1100, 597);
             listView1.TabIndex = 4;
@@ -334,11 +337,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Emoji", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(36, 27);
+            label2.Location = new Point(45, 35);
             label2.Name = "label2";
-            label2.Size = new Size(101, 26);
+            label2.Size = new Size(92, 23);
             label2.TabIndex = 1;
             label2.Text = "Matricule :";
             // 
@@ -382,8 +385,8 @@
         private Panel header;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button listeEmpBtn;
-        private Button button1;
-        private Button button2;
+        private Button pointagebtn;
+        private Button heuresupBtn;
         private Button button3;
         private Button button4;
         private Button button5;

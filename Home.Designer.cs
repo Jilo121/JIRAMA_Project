@@ -14,6 +14,7 @@
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
+
             {
                 components.Dispose();
             }
@@ -35,18 +36,37 @@
             closebtn = new Button();
             logoBox = new PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            listeEmpBtn = new Button();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
+            point_Ppl_Btn = new Button();
+            point_panel = new FlowLayoutPanel();
+            point_Btn = new Button();
+            heuresup_Btn = new Button();
+            affPres_Btn = new Button();
+            fact_Btn = new Button();
+            fact_panel = new FlowLayoutPanel();
+            repartFact_Btn = new Button();
+            zonerepart_Btn = new Button();
+            doc_Btn = new Button();
+            doc_panel = new FlowLayoutPanel();
+            docreq_Btn = new Button();
+            set_Btn = new Button();
+            param_panel = new FlowLayoutPanel();
+            paramBtn = new Button();
+            panel2 = new Panel();
+            pointagePanel = new Panel();
+            listView1 = new ListView();
+            affNom = new Label();
+            searchMatr = new Button();
+            label2 = new Label();
+            matricul_input = new TextBox();
             header.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoBox).BeginInit();
             flowLayoutPanel1.SuspendLayout();
+            point_panel.SuspendLayout();
+            fact_panel.SuspendLayout();
+            doc_panel.SuspendLayout();
+            param_panel.SuspendLayout();
+            pointagePanel.SuspendLayout();
             SuspendLayout();
             // 
             // header
@@ -58,28 +78,28 @@
             header.Location = new Point(0, 0);
             header.Name = "header";
             header.Padding = new Padding(20, 5, 5, 5);
-            header.Size = new Size(1600, 55);
+            header.Size = new Size(1400, 55);
             header.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Calibri", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(255, 128, 0);
             label1.Location = new Point(59, 17);
             label1.Name = "label1";
-            label1.Size = new Size(87, 30);
+            label1.Size = new Size(106, 36);
             label1.TabIndex = 2;
             label1.Text = "JIRAMA";
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel1.Controls.Add(minimizebtn);
             panel1.Controls.Add(closebtn);
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1381, 5);
+            panel1.Location = new Point(1182, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(214, 45);
+            panel1.Size = new Size(213, 45);
             panel1.TabIndex = 1;
             // 
             // minimizebtn
@@ -125,151 +145,326 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(listeEmpBtn);
-            flowLayoutPanel1.Controls.Add(button1);
-            flowLayoutPanel1.Controls.Add(button2);
-            flowLayoutPanel1.Controls.Add(button3);
-            flowLayoutPanel1.Controls.Add(button4);
-            flowLayoutPanel1.Controls.Add(button5);
-            flowLayoutPanel1.Controls.Add(button6);
-            flowLayoutPanel1.Controls.Add(button7);
-            flowLayoutPanel1.Dock = DockStyle.Left;
+            flowLayoutPanel1.Controls.Add(point_Ppl_Btn);
+            flowLayoutPanel1.Controls.Add(point_panel);
+            flowLayoutPanel1.Controls.Add(fact_Btn);
+            flowLayoutPanel1.Controls.Add(fact_panel);
+            flowLayoutPanel1.Controls.Add(doc_Btn);
+            flowLayoutPanel1.Controls.Add(doc_panel);
+            flowLayoutPanel1.Controls.Add(set_Btn);
+            flowLayoutPanel1.Controls.Add(param_panel);
             flowLayoutPanel1.Location = new Point(0, 55);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(5, 20, 0, 0);
             flowLayoutPanel1.Size = new Size(257, 695);
             flowLayoutPanel1.TabIndex = 1;
             // 
-            // listeEmpBtn
+            // point_Ppl_Btn
             // 
-            listeEmpBtn.BackColor = Color.DimGray;
-            listeEmpBtn.FlatAppearance.BorderSize = 0;
-            listeEmpBtn.FlatStyle = FlatStyle.Flat;
-            listeEmpBtn.Font = new Font("Arial Unicode MS", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            listeEmpBtn.ForeColor = SystemColors.ButtonHighlight;
-            listeEmpBtn.Image = Properties.Resources.logo_jirama;
-            listeEmpBtn.Location = new Point(8, 23);
-            listeEmpBtn.Name = "listeEmpBtn";
-            listeEmpBtn.Size = new Size(245, 49);
-            listeEmpBtn.TabIndex = 0;
-            listeEmpBtn.Text = "POINTAGE";
-            listeEmpBtn.TextAlign = ContentAlignment.MiddleLeft;
-            listeEmpBtn.UseVisualStyleBackColor = false;
+            point_Ppl_Btn.BackColor = Color.DimGray;
+            point_Ppl_Btn.FlatAppearance.BorderSize = 0;
+            point_Ppl_Btn.FlatStyle = FlatStyle.Flat;
+            point_Ppl_Btn.Font = new Font("Calibri", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            point_Ppl_Btn.ForeColor = Color.FromArgb(25, 25, 25);
+            point_Ppl_Btn.Image = Properties.Resources.logo_jirama;
+            point_Ppl_Btn.Location = new Point(8, 23);
+            point_Ppl_Btn.Name = "point_Ppl_Btn";
+            point_Ppl_Btn.Size = new Size(245, 49);
+            point_Ppl_Btn.TabIndex = 0;
+            point_Ppl_Btn.Text = "POINTAGE";
+            point_Ppl_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            point_Ppl_Btn.UseVisualStyleBackColor = false;
+            point_Ppl_Btn.Click += point_Ppl_Btn_Click;
             // 
-            // button1
+            // point_panel
             // 
-            button1.BackColor = Color.FromArgb(64, 64, 64);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Unicode MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(8, 78);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 49);
-            button1.TabIndex = 1;
-            button1.Text = "Pointage";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
+            point_panel.Controls.Add(point_Btn);
+            point_panel.Controls.Add(heuresup_Btn);
+            point_panel.Controls.Add(affPres_Btn);
+            point_panel.Location = new Point(8, 78);
+            point_panel.Name = "point_panel";
+            point_panel.Size = new Size(240, 165);
+            point_panel.TabIndex = 12;
             // 
-            // button2
+            // point_Btn
             // 
-            button2.BackColor = Color.FromArgb(64, 64, 64);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial Unicode MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(8, 133);
-            button2.Name = "button2";
-            button2.Size = new Size(200, 49);
-            button2.TabIndex = 2;
-            button2.Text = "Heure Suplémentaire";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = false;
+            point_Btn.BackColor = Color.Gray;
+            point_Btn.FlatAppearance.BorderSize = 0;
+            point_Btn.FlatStyle = FlatStyle.Flat;
+            point_Btn.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            point_Btn.ForeColor = SystemColors.ActiveCaptionText;
+            point_Btn.Location = new Point(3, 3);
+            point_Btn.Name = "point_Btn";
+            point_Btn.Size = new Size(200, 49);
+            point_Btn.TabIndex = 1;
+            point_Btn.Text = "Pointage";
+            point_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            point_Btn.UseVisualStyleBackColor = false;
+            point_Btn.Click += pointagebtn_Click;
             // 
-            // button3
+            // heuresup_Btn
             // 
-            button3.BackColor = Color.FromArgb(64, 64, 64);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Arial Unicode MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(8, 188);
-            button3.Name = "button3";
-            button3.Size = new Size(200, 49);
-            button3.TabIndex = 3;
-            button3.Text = "Afficher Présence";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.UseVisualStyleBackColor = false;
+            heuresup_Btn.BackColor = Color.DarkSlateGray;
+            heuresup_Btn.FlatAppearance.BorderSize = 0;
+            heuresup_Btn.FlatStyle = FlatStyle.Flat;
+            heuresup_Btn.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            heuresup_Btn.ForeColor = SystemColors.ButtonHighlight;
+            heuresup_Btn.Location = new Point(3, 58);
+            heuresup_Btn.Name = "heuresup_Btn";
+            heuresup_Btn.Size = new Size(200, 49);
+            heuresup_Btn.TabIndex = 2;
+            heuresup_Btn.Text = "Heure Suplémentaire";
+            heuresup_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            heuresup_Btn.UseVisualStyleBackColor = false;
+            heuresup_Btn.Click += heuresup_click;
             // 
-            // button4
+            // affPres_Btn
             // 
-            button4.BackColor = Color.DimGray;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Arial Unicode MS", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Image = Properties.Resources.logo_jirama;
-            button4.Location = new Point(8, 243);
-            button4.Name = "button4";
-            button4.Size = new Size(245, 49);
-            button4.TabIndex = 4;
-            button4.Text = "FACTURE";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = false;
+            affPres_Btn.BackColor = Color.DarkSlateGray;
+            affPres_Btn.FlatAppearance.BorderSize = 0;
+            affPres_Btn.FlatStyle = FlatStyle.Flat;
+            affPres_Btn.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            affPres_Btn.ForeColor = SystemColors.ButtonHighlight;
+            affPres_Btn.Location = new Point(3, 113);
+            affPres_Btn.Name = "affPres_Btn";
+            affPres_Btn.Size = new Size(200, 49);
+            affPres_Btn.TabIndex = 3;
+            affPres_Btn.Text = "Afficher Présence";
+            affPres_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            affPres_Btn.UseVisualStyleBackColor = false;
+            affPres_Btn.Click += affPres_Btn_Click;
             // 
-            // button5
+            // fact_Btn
             // 
-            button5.BackColor = Color.FromArgb(64, 64, 64);
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Arial Unicode MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.ForeColor = SystemColors.ButtonHighlight;
-            button5.Location = new Point(8, 298);
-            button5.Name = "button5";
-            button5.Size = new Size(200, 49);
-            button5.TabIndex = 5;
-            button5.Text = "Répartition Facture";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.UseVisualStyleBackColor = false;
+            fact_Btn.BackColor = Color.DimGray;
+            fact_Btn.FlatAppearance.BorderSize = 0;
+            fact_Btn.FlatStyle = FlatStyle.Flat;
+            fact_Btn.Font = new Font("Calibri", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            fact_Btn.ForeColor = Color.FromArgb(25, 25, 25);
+            fact_Btn.Image = Properties.Resources.logo_jirama;
+            fact_Btn.Location = new Point(8, 249);
+            fact_Btn.Name = "fact_Btn";
+            fact_Btn.Size = new Size(245, 49);
+            fact_Btn.TabIndex = 4;
+            fact_Btn.Text = "FACTURE";
+            fact_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            fact_Btn.UseVisualStyleBackColor = false;
+            fact_Btn.Click += fact_Btn_Click;
             // 
-            // button6
+            // fact_panel
             // 
-            button6.BackColor = Color.FromArgb(64, 64, 64);
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Arial Unicode MS", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.ForeColor = SystemColors.ButtonHighlight;
-            button6.Location = new Point(8, 353);
-            button6.Name = "button6";
-            button6.Size = new Size(200, 49);
-            button6.TabIndex = 6;
-            button6.Text = "Zone de répartition";
-            button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.UseVisualStyleBackColor = false;
+            fact_panel.Controls.Add(repartFact_Btn);
+            fact_panel.Controls.Add(zonerepart_Btn);
+            fact_panel.Location = new Point(8, 304);
+            fact_panel.Name = "fact_panel";
+            fact_panel.Size = new Size(238, 108);
+            fact_panel.TabIndex = 13;
             // 
-            // button7
+            // repartFact_Btn
             // 
-            button7.BackColor = Color.DimGray;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Arial Unicode MS", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.ForeColor = SystemColors.ButtonHighlight;
-            button7.Image = Properties.Resources.logo_jirama;
-            button7.Location = new Point(8, 408);
-            button7.Name = "button7";
-            button7.Size = new Size(245, 49);
-            button7.TabIndex = 7;
-            button7.Text = "PARAMETRE";
-            button7.TextAlign = ContentAlignment.MiddleLeft;
-            button7.UseVisualStyleBackColor = false;
+            repartFact_Btn.BackColor = Color.DarkSlateGray;
+            repartFact_Btn.FlatAppearance.BorderSize = 0;
+            repartFact_Btn.FlatStyle = FlatStyle.Flat;
+            repartFact_Btn.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            repartFact_Btn.ForeColor = SystemColors.ButtonHighlight;
+            repartFact_Btn.Location = new Point(3, 3);
+            repartFact_Btn.Name = "repartFact_Btn";
+            repartFact_Btn.Size = new Size(200, 49);
+            repartFact_Btn.TabIndex = 5;
+            repartFact_Btn.Text = "Répartition Facture";
+            repartFact_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            repartFact_Btn.UseVisualStyleBackColor = false;
+            repartFact_Btn.Click += repartFact_Btn_Click;
+            // 
+            // zonerepart_Btn
+            // 
+            zonerepart_Btn.BackColor = Color.DarkSlateGray;
+            zonerepart_Btn.FlatAppearance.BorderSize = 0;
+            zonerepart_Btn.FlatStyle = FlatStyle.Flat;
+            zonerepart_Btn.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            zonerepart_Btn.ForeColor = SystemColors.ButtonHighlight;
+            zonerepart_Btn.Location = new Point(3, 58);
+            zonerepart_Btn.Name = "zonerepart_Btn";
+            zonerepart_Btn.Size = new Size(200, 49);
+            zonerepart_Btn.TabIndex = 6;
+            zonerepart_Btn.Text = "Zone de répartition";
+            zonerepart_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            zonerepart_Btn.UseVisualStyleBackColor = false;
+            zonerepart_Btn.Click += zonerepart_Btn_Click;
+            // 
+            // doc_Btn
+            // 
+            doc_Btn.BackColor = Color.DimGray;
+            doc_Btn.FlatAppearance.BorderSize = 0;
+            doc_Btn.FlatStyle = FlatStyle.Flat;
+            doc_Btn.Font = new Font("Calibri", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            doc_Btn.ForeColor = Color.FromArgb(25, 25, 25);
+            doc_Btn.Image = Properties.Resources.logo_jirama;
+            doc_Btn.Location = new Point(8, 418);
+            doc_Btn.Name = "doc_Btn";
+            doc_Btn.Size = new Size(245, 49);
+            doc_Btn.TabIndex = 7;
+            doc_Btn.Text = "DOCUMENTATION";
+            doc_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            doc_Btn.UseVisualStyleBackColor = false;
+            doc_Btn.Click += doc_Btn_Click;
+            // 
+            // doc_panel
+            // 
+            doc_panel.Controls.Add(docreq_Btn);
+            doc_panel.Location = new Point(8, 473);
+            doc_panel.Name = "doc_panel";
+            doc_panel.Size = new Size(243, 59);
+            doc_panel.TabIndex = 15;
+            // 
+            // docreq_Btn
+            // 
+            docreq_Btn.BackColor = Color.DarkSlateGray;
+            docreq_Btn.FlatAppearance.BorderSize = 0;
+            docreq_Btn.FlatStyle = FlatStyle.Flat;
+            docreq_Btn.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            docreq_Btn.ForeColor = SystemColors.ButtonHighlight;
+            docreq_Btn.Location = new Point(3, 3);
+            docreq_Btn.Name = "docreq_Btn";
+            docreq_Btn.Size = new Size(200, 49);
+            docreq_Btn.TabIndex = 8;
+            docreq_Btn.Text = "Doccuments requis";
+            docreq_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            docreq_Btn.UseVisualStyleBackColor = false;
+            docreq_Btn.Click += docreq_Btn_Click;
+            // 
+            // set_Btn
+            // 
+            set_Btn.BackColor = Color.DimGray;
+            set_Btn.FlatAppearance.BorderSize = 0;
+            set_Btn.FlatStyle = FlatStyle.Flat;
+            set_Btn.Font = new Font("Calibri", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            set_Btn.ForeColor = Color.FromArgb(25, 25, 25);
+            set_Btn.Image = Properties.Resources.logo_jirama;
+            set_Btn.Location = new Point(8, 538);
+            set_Btn.Name = "set_Btn";
+            set_Btn.Size = new Size(245, 49);
+            set_Btn.TabIndex = 10;
+            set_Btn.Text = "PARAMETRE";
+            set_Btn.TextAlign = ContentAlignment.MiddleLeft;
+            set_Btn.UseVisualStyleBackColor = false;
+            set_Btn.Click += set_Btn_Click;
+            // 
+            // param_panel
+            // 
+            param_panel.Controls.Add(paramBtn);
+            param_panel.Location = new Point(8, 593);
+            param_panel.Name = "param_panel";
+            param_panel.Size = new Size(245, 59);
+            param_panel.TabIndex = 16;
+            // 
+            // paramBtn
+            // 
+            paramBtn.BackColor = Color.DarkSlateGray;
+            paramBtn.FlatAppearance.BorderSize = 0;
+            paramBtn.FlatStyle = FlatStyle.Flat;
+            paramBtn.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            paramBtn.ForeColor = SystemColors.ButtonHighlight;
+            paramBtn.Location = new Point(3, 3);
+            paramBtn.Name = "paramBtn";
+            paramBtn.Size = new Size(200, 49);
+            paramBtn.TabIndex = 11;
+            paramBtn.Text = "Paramètre";
+            paramBtn.TextAlign = ContentAlignment.MiddleLeft;
+            paramBtn.UseVisualStyleBackColor = false;
+            paramBtn.Click += paramBtn_Click;
+            // 
+            // panel2
+            // 
+            panel2.AutoSize = true;
+            panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel2.Location = new Point(260, 58);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(0, 0);
+            panel2.TabIndex = 2;
+            // 
+            // pointagePanel
+            // 
+            pointagePanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pointagePanel.Controls.Add(listView1);
+            pointagePanel.Controls.Add(affNom);
+            pointagePanel.Controls.Add(searchMatr);
+            pointagePanel.Controls.Add(label2);
+            pointagePanel.Controls.Add(matricul_input);
+            pointagePanel.Location = new Point(263, 61);
+            pointagePanel.Name = "pointagePanel";
+            pointagePanel.Size = new Size(1132, 689);
+            pointagePanel.TabIndex = 3;
+            // 
+            // listView1
+            // 
+            listView1.BackColor = SystemColors.ScrollBar;
+            listView1.BorderStyle = BorderStyle.None;
+            listView1.Location = new Point(0, 72);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(1100, 597);
+            listView1.TabIndex = 4;
+            listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // affNom
+            // 
+            affNom.AutoSize = true;
+            affNom.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            affNom.ForeColor = SystemColors.ButtonHighlight;
+            affNom.Location = new Point(407, 32);
+            affNom.Name = "affNom";
+            affNom.Size = new Size(100, 21);
+            affNom.TabIndex = 3;
+            affNom.Text = "Afficher nom";
+            affNom.Click += affNom_Click;
+            // 
+            // searchMatr
+            // 
+            searchMatr.Cursor = Cursors.Hand;
+            searchMatr.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 64, 64);
+            searchMatr.FlatAppearance.MouseOverBackColor = Color.FromArgb(16, 33, 30);
+            searchMatr.FlatStyle = FlatStyle.Flat;
+            searchMatr.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            searchMatr.ForeColor = Color.DarkCyan;
+            searchMatr.Location = new Point(284, 26);
+            searchMatr.Name = "searchMatr";
+            searchMatr.Size = new Size(108, 33);
+            searchMatr.TabIndex = 2;
+            searchMatr.Text = "Chercher";
+            searchMatr.UseVisualStyleBackColor = true;
+            searchMatr.Click += searchMatr_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Calibri", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(45, 35);
+            label2.Name = "label2";
+            label2.Size = new Size(92, 23);
+            label2.TabIndex = 1;
+            label2.Text = "Matricule :";
+            // 
+            // matricul_input
+            // 
+            matricul_input.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            matricul_input.Location = new Point(143, 25);
+            matricul_input.MaxLength = 6;
+            matricul_input.Name = "matricul_input";
+            matricul_input.Size = new Size(135, 33);
+            matricul_input.TabIndex = 0;
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.FromArgb(22, 22, 22);
-            ClientSize = new Size(1600, 750);
+            ClientSize = new Size(1400, 750);
+            Controls.Add(pointagePanel);
+            Controls.Add(panel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(header);
             FormBorderStyle = FormBorderStyle.None;
@@ -281,25 +476,46 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logoBox).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
+            point_panel.ResumeLayout(false);
+            fact_panel.ResumeLayout(false);
+            doc_panel.ResumeLayout(false);
+            param_panel.ResumeLayout(false);
+            pointagePanel.ResumeLayout(false);
+            pointagePanel.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Panel header;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Button listeEmpBtn;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button point_Ppl_Btn;
+        private Button point_Btn;
+        private Button heuresup_Btn;
+        private Button affPres_Btn;
+        private Button fact_Btn;
+        private Button repartFact_Btn;
+        private Button zonerepart_Btn;
         private PictureBox logoBox;
-        private Button button7;
+        private Button doc_Btn;
         private Panel panel1;
         private Button closebtn;
         private Button minimizebtn;
         private Label label1;
+        private Panel panel2;
+        private Panel pointagePanel;
+        private TextBox matricul_input;
+        private Label label2;
+        private Button searchMatr;
+        private Label affNom;
+        private ListView listView1;
+        private Button docreq_Btn;
+        private Button set_Btn;
+        private Button paramBtn;
+        private FlowLayoutPanel point_panel;
+        private FlowLayoutPanel fact_panel;
+        private FlowLayoutPanel doc_panel;
+        private FlowLayoutPanel param_panel;
     }
 }

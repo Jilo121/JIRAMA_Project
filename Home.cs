@@ -15,8 +15,12 @@ namespace JIRAMA
         public Home()
         {
             InitializeComponent();
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            point_panel.Hide();
+            fact_panel.Hide();
+            doc_panel.Hide();
+            param_panel.Hide();
         }
+
 
         private void closebtn_Click(object sender, EventArgs e)
         {
@@ -28,51 +32,193 @@ namespace JIRAMA
             WindowState = FormWindowState.Minimized;
         }
 
-        int grid = 16;
-        int caption = 40;
-        protected override void WndProc(ref Message m)
+
+        private void searchMatr_Click(object sender, EventArgs e)
         {
-            base.WndProc(ref m);
-            if (m.Msg == 0x84)
+            string matricule = matricul_input.Text;
+
+            if (matricul_input.Text.Length < 6)
             {
-                Point p = new Point(m.LParam.ToInt32());
-                p = this.PointToClient(p);
-                if (p.Y <= caption)
-                {
-                    m.Result = (IntPtr)2;
-                    return;
-                }
-                if (p.X >= this.ClientSize.Width - grid && p.Y >= this.ClientSize.Height - grid)
-                {
-                    m.Result = (IntPtr)17;
-                    return;
-                }
-                if (p.X <= grid && p.Y>=this.ClientSize.Height - grid)
-                {
-                    m.Result = (IntPtr)16;
-                    return;
-                }
-                if (p.X <= grid)
-                {
-                    m.Result = (IntPtr)10;
-                    return;
-                }
-                if (p.X >= ClientSize.Width - grid)
-                {
-                    m.Result = (IntPtr)11;
-                    return;
-                }
-                if (p.X <= grid)
-                {
-                    m.Result = (IntPtr)12;
-                    return;
-                }
-                if (p.Y >= ClientSize.Height - grid)
-                {
-                    m.Result = (IntPtr)15;
-                }
+
+                affNom.Text = "Le numero matricule doit être composé de 6 chiffres!!!";
+                affNom.ForeColor = Color.Red;
             }
-            base.WndProc(ref m);
+            else
+            {
+                affNom.Text = matricule;
+                affNom.ForeColor = Color.Green;
+            }
         }
+
+        private void affNom_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(matricul_input.Text);
+        }
+
+        //---------------------------------- Changement de couleur bouton ---------------------------------- 
+
+        private void pointagebtn_Click(object sender, EventArgs e)
+        {
+            pointagePanel.Show();
+            point_Btn.BackColor = Color.Gray;
+            point_Btn.ForeColor = Color.Black;
+            heuresup_Btn.BackColor = Color.DarkSlateGray;
+            heuresup_Btn.ForeColor = Color.White;
+            affPres_Btn.BackColor = Color.DarkSlateGray;
+            affPres_Btn.ForeColor = Color.White;
+            repartFact_Btn.BackColor = Color.DarkSlateGray;
+            repartFact_Btn.ForeColor = Color.White;
+            zonerepart_Btn.BackColor = Color.DarkSlateGray;
+            zonerepart_Btn.ForeColor = Color.White;
+            docreq_Btn.BackColor = Color.DarkSlateGray;
+            docreq_Btn.ForeColor = Color.White;
+            paramBtn.BackColor = Color.DarkSlateGray;
+            paramBtn.ForeColor = Color.White;
+
+        }
+
+        private void heuresup_click(object sender, EventArgs e)
+        {
+            pointagePanel.Hide();
+            point_Btn.BackColor = Color.DarkSlateGray;
+            point_Btn.ForeColor = Color.White;
+            heuresup_Btn.BackColor = Color.Gray;
+            heuresup_Btn.ForeColor = Color.Black;
+            affPres_Btn.BackColor = Color.DarkSlateGray;
+            affPres_Btn.ForeColor = Color.White;
+            repartFact_Btn.BackColor = Color.DarkSlateGray;
+            repartFact_Btn.ForeColor = Color.White;
+            zonerepart_Btn.BackColor = Color.DarkSlateGray;
+            zonerepart_Btn.ForeColor = Color.White;
+            docreq_Btn.BackColor = Color.DarkSlateGray;
+            docreq_Btn.ForeColor = Color.White;
+            paramBtn.BackColor = Color.DarkSlateGray;
+            paramBtn.ForeColor = Color.White;
+        }
+
+        private void affPres_Btn_Click(object sender, EventArgs e)
+        {
+            point_Btn.BackColor = Color.DarkSlateGray;
+            point_Btn.ForeColor = Color.White;
+            heuresup_Btn.BackColor = Color.DarkSlateGray;
+            heuresup_Btn.ForeColor = Color.White;
+            affPres_Btn.BackColor = Color.Gray;
+            affPres_Btn.ForeColor = Color.Black;
+            repartFact_Btn.BackColor = Color.DarkSlateGray;
+            repartFact_Btn.ForeColor = Color.White;
+            zonerepart_Btn.BackColor = Color.DarkSlateGray;
+            zonerepart_Btn.ForeColor = Color.White;
+            docreq_Btn.BackColor = Color.DarkSlateGray;
+            docreq_Btn.ForeColor = Color.White;
+            paramBtn.BackColor = Color.DarkSlateGray;
+            paramBtn.ForeColor = Color.White;
+        }
+        private void repartFact_Btn_Click(object sender, EventArgs e)
+        {
+            point_Btn.BackColor = Color.DarkSlateGray;
+            point_Btn.ForeColor = Color.White;
+            heuresup_Btn.BackColor = Color.DarkSlateGray;
+            heuresup_Btn.ForeColor = Color.White;
+            affPres_Btn.BackColor = Color.DarkSlateGray;
+            affPres_Btn.ForeColor = Color.White;
+            repartFact_Btn.BackColor = Color.Gray;
+            repartFact_Btn.ForeColor = Color.Black;
+            zonerepart_Btn.BackColor = Color.DarkSlateGray;
+            zonerepart_Btn.ForeColor = Color.White;
+            docreq_Btn.BackColor = Color.DarkSlateGray;
+            docreq_Btn.ForeColor = Color.White;
+            paramBtn.BackColor = Color.DarkSlateGray;
+            paramBtn.ForeColor = Color.White;
+        }
+
+        private void zonerepart_Btn_Click(object sender, EventArgs e)
+        {
+            point_Btn.BackColor = Color.DarkSlateGray;
+            point_Btn.ForeColor = Color.White;
+            heuresup_Btn.BackColor = Color.DarkSlateGray;
+            heuresup_Btn.ForeColor = Color.White;
+            affPres_Btn.BackColor = Color.DarkSlateGray;
+            affPres_Btn.ForeColor = Color.White;
+            repartFact_Btn.BackColor = Color.DarkSlateGray;
+            repartFact_Btn.ForeColor = Color.White;
+            zonerepart_Btn.BackColor = Color.Gray;
+            zonerepart_Btn.ForeColor = Color.Black;
+            docreq_Btn.BackColor = Color.DarkSlateGray;
+            docreq_Btn.ForeColor = Color.White;
+            paramBtn.BackColor = Color.DarkSlateGray;
+            paramBtn.ForeColor = Color.White;
+        }
+
+        private void docreq_Btn_Click(object sender, EventArgs e)
+        {
+            point_Btn.BackColor = Color.DarkSlateGray;
+            point_Btn.ForeColor = Color.White;
+            heuresup_Btn.BackColor = Color.DarkSlateGray;
+            heuresup_Btn.ForeColor = Color.White;
+            affPres_Btn.BackColor = Color.DarkSlateGray;
+            affPres_Btn.ForeColor = Color.White;
+            repartFact_Btn.BackColor = Color.DarkSlateGray;
+            repartFact_Btn.ForeColor = Color.White;
+            zonerepart_Btn.BackColor = Color.DarkSlateGray;
+            zonerepart_Btn.ForeColor = Color.White;
+            docreq_Btn.BackColor = Color.Gray;
+            docreq_Btn.ForeColor = Color.Black;
+            paramBtn.BackColor = Color.DarkSlateGray;
+            paramBtn.ForeColor = Color.White;
+        }
+
+        private void paramBtn_Click(object sender, EventArgs e)
+        {
+            point_Btn.BackColor = Color.DarkSlateGray;
+            point_Btn.ForeColor = Color.White;
+            heuresup_Btn.BackColor = Color.DarkSlateGray;
+            heuresup_Btn.ForeColor = Color.White;
+            affPres_Btn.BackColor = Color.DarkSlateGray;
+            affPres_Btn.ForeColor = Color.White;
+            repartFact_Btn.BackColor = Color.DarkSlateGray;
+            repartFact_Btn.ForeColor = Color.White;
+            zonerepart_Btn.BackColor = Color.DarkSlateGray;
+            zonerepart_Btn.ForeColor = Color.White;
+            docreq_Btn.BackColor = Color.DarkSlateGray;
+            docreq_Btn.ForeColor = Color.White;
+            paramBtn.BackColor = Color.Gray;
+            paramBtn.ForeColor = Color.Black;
+        }
+
+        //---------------------------------- Affichage menu ---------------------------------- 
+
+        private void point_Ppl_Btn_Click(object sender, EventArgs e)
+        {
+            point_panel.Show();
+            fact_panel.Hide();
+            doc_panel.Hide();
+            param_panel.Hide();
+        }
+
+        private void fact_Btn_Click(object sender, EventArgs e)
+        {
+            point_panel.Hide();
+            fact_panel.Show();
+            doc_panel.Hide();
+            param_panel.Hide();
+        }
+
+        private void doc_Btn_Click(object sender, EventArgs e)
+        {
+            point_panel.Hide();
+            fact_panel.Hide();
+            doc_panel.Show();
+            param_panel.Hide();
+        }
+
+        private void set_Btn_Click(object sender, EventArgs e)
+        {
+            point_panel.Hide();
+            fact_panel.Hide();
+            doc_panel.Hide();
+            param_panel.Show();
+        }
+
+
     }
 }

@@ -66,7 +66,7 @@
             label2.Margin = new Padding(10, 0, 10, 0);
             label2.Name = "label2";
             label2.Size = new Size(109, 21);
-            label2.TabIndex = 1;
+            label2.TabIndex = 1; 
             label2.Text = "Mot de passe";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
